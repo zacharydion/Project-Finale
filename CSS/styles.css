@@ -1,0 +1,152 @@
+:root {
+    --gap: 5px;
+    --trans-speed: 0.5s;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto;
+
+    &>* {
+        padding: var(--gap);
+        margin: var(--gap);
+    }
+
+    .header {
+        display: inline;
+    }
+
+    .footer {
+        display: inline;
+    }
+
+    .main {
+        flex: auto;
+        min-height: 5vh;
+    }
+
+    .scroll {
+        overflow-y: auto;
+    }
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.headerMenu {
+    display: grid;
+    grid-template-columns: 4vw auto;
+    align-items: center;
+}
+
+.menu {
+    .menuItem {
+        display: inline;
+        font-size: 3vw;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: pointer;
+        color: black;
+        border-radius: 5px;
+
+        padding: 3px 6px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    .active {
+        color: dodgerblue !important;
+    }
+}
+
+.siteIcon {
+    background-image: URL('../images/favicon.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 3.75vw;
+    height: 3.75vw;
+}
+
+@media (min-width : 1100px) {
+    .menu {
+        .menuItem {
+            font-size: 33px;
+        }
+    }
+
+    .headerMenu {
+        grid-template-columns: 45px auto;
+    }
+
+    .siteIcon {
+        width: 40px;
+        height: 40px;
+    }
+}
+:root { 
+    --duration: 0.75s; 
+    --detailsPadding: 25px; 
+    interpolate-size: allow-keywords; 
+} 
+summary { 
+    cursor: pointer; 
+    font-size:3vw;
+    font-weight:bold;
+    font-family:sans-serif;
+    background-color:lightgray;
+    border-radius:20px;
+    padding-left:20px;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-bottom:20px;
+    &::marker { 
+        font-size: 1em; 
+    } 
+} 
+details { 
+    div { 
+        Font-size:3vw;
+    } 
+    span { 
+        color:blue;
+        font-family: monospace; 
+        font-weight:bold;
+    } 
+    &::details-content { 
+        opacity: 0; 
+        block-size: 0; 
+        overflow-y: clip; 
+        transition:
+            content-visibility var(--duration) allow-discrete, 
+            opacity var(--duration), 
+            block-size var(--duration);
+    } 
+    &[open]::details-content { 
+        opacity: 1; 
+        block-size: auto; 
+    } 
+} 
