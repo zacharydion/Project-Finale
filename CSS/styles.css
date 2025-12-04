@@ -145,7 +145,7 @@ details {
         color: blue;
         font-family: monospace;
         font-weight: bold;
-        padding-left:35px;
+        padding-left: 35px;
     }
 
     &::details-content {
@@ -209,5 +209,3 @@ details {
         grid-template-columns: repeat(6, 1fr);
     }
 }
-
-
