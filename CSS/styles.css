@@ -107,46 +107,107 @@
         height: 40px;
     }
 }
-:root { 
-    --duration: 0.75s; 
-    --detailsPadding: 25px; 
-    interpolate-size: allow-keywords; 
-} 
-summary { 
-    cursor: pointer; 
-    font-size:3vw;
-    font-weight:bold;
-    font-family:sans-serif;
-    background-color:lightgray;
-    border-radius:20px;
-    padding-left:20px;
-    padding-top:15px;
-    padding-bottom:15px;
-    margin-bottom:20px;
-    &::marker { 
-        font-size: 1em; 
-    } 
-} 
-details { 
-    div { 
-        Font-size:3vw;
-    } 
-    span { 
-        color:blue;
-        font-family: monospace; 
-        font-weight:bold;
-    } 
-    &::details-content { 
-        opacity: 0; 
-        block-size: 0; 
-        overflow-y: clip; 
+
+:root {
+    --duration: 0.75s;
+    --detailsPadding: 25px;
+    interpolate-size: allow-keywords;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+
+
+    &::marker {
+        font-size: 1em;
+    }
+}
+
+details[open]>summary {
+    border: 5px solid black;
+}
+
+details {
+    div {
+        Font-size: 2vw;
+    }
+
+    span {
+        color: blue;
+        font-family: monospace;
+        font-weight: bold;
+        padding-left:35px;
+    }
+
+    &::details-content {
+        opacity: 0;
+        block-size: 0;
+        overflow-y: clip;
         transition:
-            content-visibility var(--duration) allow-discrete, 
-            opacity var(--duration), 
+            content-visibility var(--duration) allow-discrete,
+            opacity var(--duration),
             block-size var(--duration);
-    } 
-    &[open]::details-content { 
-        opacity: 1; 
-        block-size: auto; 
-    } 
-} 
+    }
+
+    &[open]::details-content {
+        opacity: 1;
+        block-size: auto;
+    }
+}
+
+.imageFrame {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border-radius: 6px;
+
+    &:hover {
+        scale: 1.05;
+        transition: var(--trans-speed);
+    }
+
+    transition: var(--trans-speed);
+}
+
+.mozaique {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 500px) {
+    .mozaique {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 700px) {
+    .mozaique {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .mozaique {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .mozaique {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+
