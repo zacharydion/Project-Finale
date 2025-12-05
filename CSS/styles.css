@@ -252,10 +252,10 @@ details {
 
 .jour {
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     font-size: 0.8;
     font-family: sans-serif;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .ferier {
@@ -264,7 +264,7 @@ details {
 
 
     p {
-        color:gold;
+        color: gold;
 
     }
 }
