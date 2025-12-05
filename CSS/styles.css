@@ -209,3 +209,42 @@ details {
         grid-template-columns: repeat(6, 1fr);
     }
 }
+
+.annee {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.Mois {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+.mois {
+    font-weight: bold;
+    font-size:1.5em;
+}
+@media (min-width: 500px) {
+    .annee {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 700px) {
+    .annee {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .annee {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .annee {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
